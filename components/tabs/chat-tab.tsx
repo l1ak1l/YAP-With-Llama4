@@ -36,16 +36,16 @@ export default function ChatTab() {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-2rem)]">
-      <div className="flex items-center mb-6">
-        <h2 className="text-2xl font-bold">💬 Chat</h2>
+    <div className="flex flex-col h-[calc(100vh-4rem)] md:h-[calc(100vh-2rem)]">
+      <div className="flex items-center mb-4 md:mb-6">
+        <h2 className="text-xl md:text-2xl font-bold">💬 Chat</h2>
       </div>
 
       {/* Chat Messages */}
       <Card className="flex-1 overflow-y-auto mb-4 bg-background/60 border-border/40">
-        <CardContent className="p-4">
+        <CardContent className="p-3 md:p-4">
           {messages.length === 0 ? (
-            <div className="h-full flex items-center justify-center text-muted-foreground">
+            <div className="h-full flex items-center justify-center text-muted-foreground text-sm md:text-base">
               Start a conversation with Llama-4
             </div>
           ) : (
@@ -53,7 +53,7 @@ export default function ChatTab() {
               {messages.map((message, index) => (
                 <div key={index} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
                   <div
-                    className={`max-w-[80%] rounded-lg p-3 ${
+                    className={`max-w-[85%] md:max-w-[80%] rounded-lg p-2 md:p-3 text-sm md:text-base ${
                       message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
                     }`}
                   >
@@ -63,7 +63,7 @@ export default function ChatTab() {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="max-w-[80%] rounded-lg p-3 bg-muted text-foreground">
+                  <div className="max-w-[85%] md:max-w-[80%] rounded-lg p-2 md:p-3 bg-muted text-foreground">
                     <div className="flex space-x-2">
                       <div className="w-2 h-2 rounded-full bg-foreground/50 animate-bounce" />
                       <div className="w-2 h-2 rounded-full bg-foreground/50 animate-bounce [animation-delay:0.2s]" />
@@ -78,15 +78,15 @@ export default function ChatTab() {
       </Card>
 
       {/* Input Form */}
-      <form onSubmit={handleSubmit} className="flex gap-2">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
         <Textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type your message here..."
-          className="flex-1 resize-none bg-background/60 border-border/40"
+          className="flex-1 resize-none bg-background/60 border-border/40 min-h-[80px] sm:min-h-[60px]"
           rows={2}
         />
-        <Button type="submit" disabled={isLoading || !input.trim()}>
+        <Button type="submit" className="sm:self-end" disabled={isLoading || !input.trim()}>
           Send
         </Button>
       </form>

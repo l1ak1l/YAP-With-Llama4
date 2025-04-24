@@ -14,7 +14,7 @@ interface SidebarProps {
 
 export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   return (
-    <div className="w-64 border-r border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex flex-col h-screen">
+    <div className="w-full md:w-64 border-r border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex flex-col h-full md:h-screen">
       <div className="p-4 border-b border-border/40">
         <h1 className="text-xl font-bold flex items-center gap-2">
           <span role="img" aria-label="llama">

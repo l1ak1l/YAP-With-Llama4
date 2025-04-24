@@ -35,74 +35,79 @@ export default function LandingPage() {
         <LandingNavbar />
 
         {/* Hero Section */}
-        <section className="container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-24 text-center md:py-32">
+        <section className="container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-6 md:space-y-8 py-16 md:py-24 text-center px-4">
           <div className="space-y-4">
-            <h1 className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold tracking-tight text-transparent">
               Yap with Llama-4
               <br />
               <span className="text-gray-400">AI Assistant Platform</span>
             </h1>
-            <p className="mx-auto max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+            <p className="mx-auto max-w-[42rem] leading-normal text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl">
               Harness the power of Llama-4 with an all-in-one platform featuring chat, RAG, OCR, and collaborative AI
               agents for research, analysis, and writing.
             </p>
           </div>
-          <div className="flex gap-4">
-            <Button size="lg" asChild>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+            <Button size="lg" className="w-full sm:w-auto" asChild>
               <Link href="/app">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" onClick={() => scrollToSection("features")}>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto"
+              onClick={() => scrollToSection("features")}
+            >
               Learn More
             </Button>
           </div>
         </section>
 
         {/* Features Section */}
-        <section id="features" className="container space-y-16 py-24 md:py-32">
+        <section id="features" className="container space-y-12 md:space-y-16 py-16 md:py-24 px-4">
           <div className="mx-auto max-w-[58rem] text-center">
-            <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Powerful Features</h2>
-            <p className="mt-4 text-muted-foreground sm:text-lg">
+            <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-[1.1]">Powerful Features</h2>
+            <p className="mt-4 text-muted-foreground text-sm sm:text-base md:text-lg">
               Explore the capabilities of Llama-4 through our intuitive interface
             </p>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="relative overflow-hidden rounded-lg border bg-background p-8">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+            <div className="relative overflow-hidden rounded-lg border bg-background p-6 md:p-8">
               <div className="flex items-center gap-4">
-                <MessageSquare className="h-8 w-8" />
-                <h3 className="font-bold">Llama Chatbot</h3>
+                <MessageSquare className="h-6 w-6 md:h-8 md:w-8" />
+                <h3 className="font-bold text-base md:text-lg">Llama Chatbot</h3>
               </div>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 text-muted-foreground text-sm md:text-base">
                 Engage in natural conversations with Llama-4, one of the most advanced open-source language models.
               </p>
             </div>
-            <div className="relative overflow-hidden rounded-lg border bg-background p-8">
+            <div className="relative overflow-hidden rounded-lg border bg-background p-6 md:p-8">
               <div className="flex items-center gap-4">
-                <FileText className="h-8 w-8" />
-                <h3 className="font-bold">OCR Capabilities</h3>
+                <FileText className="h-6 w-6 md:h-8 md:w-8" />
+                <h3 className="font-bold text-base md:text-lg">OCR Capabilities</h3>
               </div>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 text-muted-foreground text-sm md:text-base">
                 Extract text from images and documents with high accuracy using Llama-4's vision capabilities.
               </p>
             </div>
-            <div className="relative overflow-hidden rounded-lg border bg-background p-8">
+            <div className="relative overflow-hidden rounded-lg border bg-background p-6 md:p-8">
               <div className="flex items-center gap-4">
-                <Brain className="h-8 w-8" />
-                <h3 className="font-bold">RAG with Evaluation</h3>
+                <Brain className="h-6 w-6 md:h-8 md:w-8" />
+                <h3 className="font-bold text-base md:text-lg">RAG with Evaluation</h3>
               </div>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 text-muted-foreground text-sm md:text-base">
                 Upload documents and get accurate answers with retrieval-augmented generation and built-in evaluation
                 metrics.
               </p>
             </div>
-            <div className="relative overflow-hidden rounded-lg border bg-background p-8">
+            <div className="relative overflow-hidden rounded-lg border bg-background p-6 md:p-8">
               <div className="flex items-center gap-4">
-                <Users className="h-8 w-8" />
-                <h3 className="font-bold">Crew Agents</h3>
+                <Users className="h-6 w-6 md:h-8 md:w-8" />
+                <h3 className="font-bold text-base md:text-lg">Crew Agents</h3>
               </div>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 text-muted-foreground text-sm md:text-base">
                 Leverage specialized AI agents for research, analysis, and writing that work together to solve complex
                 tasks.
               </p>
@@ -111,44 +116,44 @@ export default function LandingPage() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="container py-24 md:py-32">
+        <section id="about" className="container py-16 md:py-24 px-4">
           <div className="mx-auto max-w-[58rem] text-center">
-            <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl mb-8">About Llama-4</h2>
+            <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-[1.1] mb-6 md:mb-8">About Llama-4</h2>
             <div className="prose prose-invert mx-auto">
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-base md:text-lg text-muted-foreground mb-6">
                 Llama-4 is Meta's most advanced open-source large language model, designed to be helpful, safe, and
                 versatile across a wide range of applications.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mt-12">
-                <div className="bg-background/60 p-6 rounded-lg border">
-                  <h3 className="text-xl font-semibold mb-3">Multi-Modal Capabilities</h3>
-                  <p className="text-muted-foreground">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-left mt-8 md:mt-12">
+                <div className="bg-background/60 p-4 md:p-6 rounded-lg border">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Multi-Modal Capabilities</h3>
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Llama-4 can understand and process both text and images, enabling it to analyze visual content,
                     extract text from images, and provide comprehensive responses based on visual information.
                   </p>
                 </div>
 
-                <div className="bg-background/60 p-6 rounded-lg border">
-                  <h3 className="text-xl font-semibold mb-3">Multi-Lingual Support</h3>
-                  <p className="text-muted-foreground">
+                <div className="bg-background/60 p-4 md:p-6 rounded-lg border">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Multi-Lingual Support</h3>
+                  <p className="text-sm md:text-base text-muted-foreground">
                     With support for over 30 languages, Llama-4 can understand and generate content across multiple
                     languages, making it accessible to a global audience and useful for translation tasks.
                   </p>
                 </div>
 
-                <div className="bg-background/60 p-6 rounded-lg border">
-                  <h3 className="text-xl font-semibold mb-3">Extended Context Window</h3>
-                  <p className="text-muted-foreground">
+                <div className="bg-background/60 p-4 md:p-6 rounded-lg border">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Extended Context Window</h3>
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Llama-4 features an impressive 128K token context window, allowing it to process and maintain
                     coherence across very long documents, conversations, and complex tasks that require significant
                     memory.
                   </p>
                 </div>
 
-                <div className="bg-background/60 p-6 rounded-lg border">
-                  <h3 className="text-xl font-semibold mb-3">Advanced Reasoning</h3>
-                  <p className="text-muted-foreground">
+                <div className="bg-background/60 p-4 md:p-6 rounded-lg border">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Advanced Reasoning</h3>
+                  <p className="text-sm md:text-base text-muted-foreground">
                     With enhanced reasoning capabilities, Llama-4 excels at complex problem-solving, logical deduction,
                     and step-by-step analysis, making it ideal for research, analysis, and collaborative AI agent
                     systems.
@@ -161,13 +166,13 @@ export default function LandingPage() {
 
         {/* CTA Section */}
         <section className="border-t">
-          <div className="container flex flex-col items-center gap-4 py-24 text-center md:py-32">
-            <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Ready to experience Llama-4?</h2>
-            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+          <div className="container flex flex-col items-center gap-4 py-16 md:py-24 text-center px-4">
+            <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-[1.1]">Ready to experience Llama-4?</h2>
+            <p className="max-w-[42rem] leading-normal text-muted-foreground text-sm sm:text-base md:text-lg">
               Join the growing community of users leveraging Llama-4's capabilities for chat, document analysis, and
               collaborative AI tasks.
             </p>
-            <Button size="lg" className="mt-4" asChild>
+            <Button size="lg" className="mt-4 w-full sm:w-auto" asChild>
               <Link href="/app">Launch App</Link>
             </Button>
           </div>

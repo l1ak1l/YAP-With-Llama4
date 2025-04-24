@@ -38,19 +38,19 @@ export default function CrewTab() {
   ]
 
   return (
-    <div className="flex flex-col h-[calc(100vh-2rem)]">
-      <div className="flex items-center mb-6">
-        <h2 className="text-2xl font-bold">👥 Crew Agents</h2>
+    <div className="flex flex-col h-[calc(100vh-4rem)] md:h-[calc(100vh-2rem)]">
+      <div className="flex items-center mb-4 md:mb-6">
+        <h2 className="text-xl md:text-2xl font-bold">👥 Crew Agents</h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 flex-1">
         {/* Task Definition Section */}
         <Card className="bg-background/60 border-border/40">
-          <CardContent className="p-6">
-            <h3 className="text-lg font-medium mb-4">Define a Task for the AI Crew</h3>
+          <CardContent className="p-4 md:p-6">
+            <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4">Define a Task for the AI Crew</h3>
             <div className="space-y-4">
               <div>
-                <label htmlFor="task" className="text-sm text-muted-foreground">
+                <label htmlFor="task" className="text-xs md:text-sm text-muted-foreground">
                   Describe the task in detail:
                 </label>
                 <Textarea
@@ -58,7 +58,7 @@ export default function CrewTab() {
                   value={task}
                   onChange={(e) => setTask(e.target.value)}
                   placeholder="Research and produce a comprehensive report on the latest advancements in Generative AI..."
-                  className="mt-1 resize-none bg-background/60 border-border/40"
+                  className="mt-1 resize-none bg-background/60 border-border/40 text-sm md:text-base"
                   rows={6}
                 />
               </div>
@@ -69,15 +69,15 @@ export default function CrewTab() {
 
               <Accordion type="single" collapsible className="mt-4">
                 <AccordionItem value="examples">
-                  <AccordionTrigger className="text-sm">Example Tasks</AccordionTrigger>
+                  <AccordionTrigger className="text-xs md:text-sm">Example Tasks</AccordionTrigger>
                   <AccordionContent>
-                    <ul className="space-y-2 text-sm">
+                    <ul className="space-y-2 text-xs md:text-sm">
                       {exampleTasks.map((example, index) => (
                         <li key={index} className="flex items-start">
                           <span className="mr-2">•</span>
                           <Button
                             variant="link"
-                            className="p-0 h-auto text-left font-normal"
+                            className="p-0 h-auto text-left font-normal text-xs md:text-sm"
                             onClick={() => setTask(example)}
                           >
                             {example}
@@ -94,31 +94,31 @@ export default function CrewTab() {
 
         {/* Results Section */}
         <Card className="bg-background/60 border-border/40">
-          <CardContent className="p-6 h-full flex flex-col">
-            <h3 className="text-lg font-medium mb-4 flex items-center">
-              <Users className="mr-2 h-5 w-5" />
+          <CardContent className="p-4 md:p-6 h-full flex flex-col">
+            <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4 flex items-center">
+              <Users className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               Crew Results
             </h3>
 
-            <div className="bg-muted/30 rounded-lg p-4 flex-1 overflow-y-auto">
+            <div className="bg-muted/30 rounded-lg p-3 md:p-4 flex-1 overflow-y-auto">
               {isLoading ? (
-                <div className="flex flex-col items-center justify-center h-full space-y-4">
+                <div className="flex flex-col items-center justify-center h-full space-y-3 md:space-y-4">
                   <div className="flex space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-foreground/50 animate-bounce" />
-                    <div className="w-3 h-3 rounded-full bg-foreground/50 animate-bounce [animation-delay:0.2s]" />
-                    <div className="w-3 h-3 rounded-full bg-foreground/50 animate-bounce [animation-delay:0.4s]" />
+                    <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-foreground/50 animate-bounce" />
+                    <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-foreground/50 animate-bounce [animation-delay:0.2s]" />
+                    <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-foreground/50 animate-bounce [animation-delay:0.4s]" />
                   </div>
-                  <p className="text-sm text-muted-foreground">The AI crew is working on your task...</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">The AI crew is working on your task...</p>
                 </div>
               ) : result ? (
-                <div className="text-sm">
+                <div className="text-xs md:text-sm">
                   <h4 className="font-medium mb-2">Task Results:</h4>
                   <p>{result}</p>
                 </div>
               ) : (
                 <div className="text-center text-muted-foreground h-full flex flex-col items-center justify-center">
-                  <Users className="h-12 w-12 mb-4 opacity-50" />
-                  <p>Submit a task to see results from the AI crew</p>
+                  <Users className="h-10 w-10 md:h-12 md:w-12 mb-3 md:mb-4 opacity-50" />
+                  <p className="text-xs md:text-sm">Submit a task to see results from the AI crew</p>
                   <p className="text-xs mt-2">
                     The crew consists of Research, Analyst, and Writer agents working together
                   </p>
